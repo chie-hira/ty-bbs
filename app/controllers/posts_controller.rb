@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
     def index
-        # @posts = Post.all
+        @posts = Post.all
     end
     
-    def show
-        # @post = Post.find(params[:id])
+    # メソッド名はviewのファイル名と同じにしないといけない
+    def new
+        @post = Post.new
     end
 end
