@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   # localhost:3000/posts
-  resources :posts, only: [:index, :new, :create, :show]
+  # ルーティング、コントロールのメソッド名、ビューのファイル名は一致させる
+  # 自動でURLを生成してくれる たとえばeditの場合はhttp://127.0.0.1:3000/posts/1/edit(posts/:id/edit)
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 end
