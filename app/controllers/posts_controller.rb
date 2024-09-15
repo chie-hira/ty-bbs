@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    before_action :set_post, only: [ :show, :edit, :update, :destroy ]
 
     def index
         @posts = Post.all
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
     def show
     end
-    
+
     # メソッド名はviewのファイル名と同じにしないといけない
     def new
         @post = Post.new
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     def create
         # フォームから送られてきたデータを受け取ってインスタンス変数に代入
         @post = Post.new(post_params)
-        
+
         # posts_pathはroutes.rbでresourcesを定義したときに自動的に生成される
         # posts_pathはposts#indexを指す
         if @post.save
