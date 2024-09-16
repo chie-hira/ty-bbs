@@ -1,0 +1,18 @@
+<h1>新しい投稿</h1>
+
+<!-- セキュリティも考慮したhtmlが自動生成される -->
+<%= form_with model: @post, html: {class: "form-container"} do |form| %>
+    <div class="form-input">
+        <%= form.label :title %><br>
+            <%= form.text_field :title %>
+    </div>
+
+    <div class="form-input">
+        <%= form.label :content %><br>
+            <%= form.text_area :content %>
+    </div>
+
+    <div>
+        <%= form.submit "投稿", class: "link-button" %>
+    </div>
+    <% end %>
